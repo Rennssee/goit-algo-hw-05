@@ -6,7 +6,9 @@ def binary_search(arr, target):
         mid = left + (right - left) // 2
         iterations += 1
 
-        if arr[mid] < target:
+        if arr[mid] == target:
+            break  # Додали перевірку, якщо елемент знайдено, припиняємо цикл
+        elif arr[mid] < target:
             left = mid + 1
         else:
             right = mid - 1
@@ -19,7 +21,7 @@ def binary_search(arr, target):
 
 # Тестування:
 sorted_array = [0.1, 0.5, 1.2, 1.7, 2.0, 2.5, 3.1, 4.2, 5.0]
-target_value = 5.0
+target_value = 2.0
 
 result = binary_search(sorted_array, target_value)
 iterations, upper_bound = result
